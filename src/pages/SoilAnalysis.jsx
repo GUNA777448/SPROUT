@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Upload, FileText, Edit3, Leaf, AlertTriangle, CheckCircle, Droplets, Zap, Info } from 'lucide-react';
 
 // Soil texture options

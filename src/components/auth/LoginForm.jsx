@@ -2,10 +2,8 @@
 
 import React, { useState } from "react";
 import { Eye, EyeOff, Leaf, Mail, Lock } from "lucide-react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-
-import { getAuth, signInWithRedirect, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "../../firebase";
 
 export default function LoginForm() {
@@ -13,7 +11,6 @@ export default function LoginForm() {
     email: "",
     password: "",
   });
-  const provider = new GoogleAuthProvider();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -31,7 +28,7 @@ export default function LoginForm() {
 
     try {
       // TODO: Implement actual login logic here
-      await signInWithEmailAndPassword(auth, formData.email, formData.password);
+      const userCredential = await signInWithEmailAndPassword(auth, formData.email, formData.password);
       console.log("Login successful:", userCredential.user);
       navigate("/");
     } catch (error) {

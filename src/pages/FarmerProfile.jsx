@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { User, MapPin, Phone, Mail, Calendar, Download, Filter, Eye, Edit3, Camera, Navigation } from 'lucide-react';
 
 // Mock data for transactions and receipts
@@ -81,9 +81,9 @@ export default function FarmerProfile() {
   const [profileImage, setProfileImage] = useState(null);
   
   // Dashboard state
-  const [transactions, setTransactions] = useState(mockTransactions);
+  const [transactions] = useState(mockTransactions);
   const [filterType, setFilterType] = useState('all');
-  const [filterDate, setFilterDate] = useState('all');
+  const [filterDate] = useState('all');
 
   // Calculate total spend
   const totalSpend = transactions.reduce((sum, transaction) => sum + transaction.amount, 0);
