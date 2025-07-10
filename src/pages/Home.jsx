@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Bell, Leaf, Bot, ShoppingCart, Search, ChevronLeft, ChevronRight, User } from "lucide-react";
 
 const quickActions = [
@@ -35,6 +35,7 @@ const carouselData = [
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   // Auto-advance carousel
   useEffect(() => {

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import './BottomNavBar.css';
 
 const iconColor = '#ffffff';
-const bgColor = '#388e3c';
 
 const HomeIcon = () => (
   <svg width="24" height="24" fill={iconColor} viewBox="0 0 24 24">
